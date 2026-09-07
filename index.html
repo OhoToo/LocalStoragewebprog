@@ -2,9 +2,11 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8"> 
-    <meta name="viewport" content="width=device-width, inital-scale=1.0">
+    <!-- Исправлено: initial-scale (добавлена буква i) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Управление студентами</title>
     <link rel="icon" type="image/png" href="favicon.ico">
+    <!-- Будет работать идеально, когда переименуешь папку scc в css -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -14,26 +16,28 @@
     <main>
         <section id="list-section">
             <h2>Список студентов</h2>
-            <button id="show-add-form-bin">Добавить студента</button>
+            <!-- Исправлено: кнопка заменена на ссылку для перехода на form.html -->
+            <a href="form.html" class="btn-link">Добавить студента</a>
+            
             <table id="student-table">
                 <thead>
                     <tr>
-                        <th>ФИО</th>
+                        <th>ФИО (наведите для досье)</th>
                         <th>Группа</th>
                         <th>ИСУ ID</th>
                         <th>Действия</th>
                     </tr>
                 </thead>
                 <tbody id="students-tbody">
-
+                    <!-- Сюда JS добавит строки -->
                 </tbody>
-
             </table>
         </section>
+        
         <div id="profile-tooltip" class="modal-tooltip hidden">
             <h3>Досье</h3>
             <div id="tooltip-content">
-
+                <!-- Сюда JS вставит данные -->
             </div>
         </div>
     </main>

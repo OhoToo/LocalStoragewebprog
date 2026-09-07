@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="ru">
     <head>
-        <meta charset="UTF=8">
-        <meta name="viewport" content="widht=device-width, initial-scale=1.0">
+        <!-- Исправлено: UTF-8 -->
+        <meta charset="UTF-8">
+        <!-- Исправлено: width -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Редактирование студента</title>
         <link rel="icon" type="image/png" href="favicon.ico">
         <link rel="stylesheet" href="css/styles.css">   
@@ -15,30 +17,36 @@
             <section id="form-section">
                 <h2 id="form-title">Добавление студента</h2>
                 <form id="student-form">
+                    <!-- Исправлено: добавлены > в концы инпутов -->
                     <label>ФИО:
-                        <input type="text" id="stu-name" required placeholder="Иванов Иван Иванович"
+                        <input type="text" id="stu-name" required placeholder="Иванов Иван Иванович">
                     </label>
                     <label>Группа:
-                        <input type="text" id="stu-group" required placeholder="P3223"
+                        <input type="text" id="stu-group" required placeholder="P3223">
                     </label>
                     <label>ИСУ ID:
-                        <input type="number" id="stu-isu" required min="100000" max="999999"
+                        <input type="number" id="stu-isu" required min="100000" max="999999">
                     </label>
-                    <label>Номер общажития:
+                    <label>Номер общежития:
                         <input type="number" id="stu-hostel" required min="1">
+                    </label>
+                    <!-- Исправлено: добавлено пропущенное поле Комната -->
+                    <label>Комната:
+                        <input type="text" id="stu-room" required placeholder="123-А">
                     </label>
                     <label>Срок заселения:
                         <input type="date" id="stu-date" required>
                     </label>
                     <label>
-                        <input type="checkbox" id="stu-foreign"> Является ли иностранцем
+                        <input type="checkbox" id="stu-foreign"> Является иностранцем
                     </label>
                     <label>Заметки:
                         <textarea id="stu-notes" rows="4"></textarea>
                     </label>
                     <div class="form-buttons">
                         <button type="submit" id="save-btn">Сохранить</button>
-                        <a href="index.html" class="btn-link btn-cancal">Отмена</a>
+                        <!-- Исправлено: btn-cancel -->
+                        <a href="index.html" class="btn-link btn-cancel">Отмена</a>
                     </div>
                 </form>
             </section>
