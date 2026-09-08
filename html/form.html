@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="ru">
     <head>
-        <meta charset="UTF=8">
-        <meta name="viewport" content="widht=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <meta name="viewport">
         <title>Редактирование студента</title>
-        <link rel="icon" type="image/png" href="favicon.ico">
-        <link rel="stylesheet" href="css/styles.css">   
+        <script type="module" src="../js/dataSave.js"></script>
+        <link rel="icon" type="image/png" href="../favicon.png">
+        <!--<link rel="icon" type="image/png" href="favicon.ico">
+        <link rel="stylesheet" href="css/styles.css">   -->
     </head>
     <body>
         <header>
@@ -16,26 +18,34 @@
                 <h2 id="form-title">Добавление студента</h2>
                 <form id="student-form">
                     <label>ФИО:
-                        <input type="text" id="stu-name" required placeholder="Иванов Иван Иванович"
+                        <input type="text" id="stu-name" name="stu-name" required placeholder="Иванов Иван Иванович">
                     </label>
+
                     <label>Группа:
-                        <input type="text" id="stu-group" required placeholder="P3223"
+                        <input type="text" id="stu-group" name="stu-group" required placeholder="P3223">
                     </label>
+
                     <label>ИСУ ID:
-                        <input type="number" id="stu-isu" required min="100000" max="999999"
+                        <input type="number" id="stu-isu" name="stu-isu" required min="100000" max="999999">
                     </label>
+
                     <label>Номер общажития:
-                        <input type="number" id="stu-hostel" required min="1">
+                        <input type="number" id="stu-hostel" name="stu-hostel" min="1">
                     </label>
+
                     <label>Срок заселения:
-                        <input type="date" id="stu-date" required>
+                        <input type="date" id="stu-date" name="stu-date">
                     </label>
+
                     <label>
-                        <input type="checkbox" id="stu-foreign"> Является ли иностранцем
+                        <input type="checkbox" id="stu-foreign" name="stu-foreign">
+                        Является ли иностранцем
                     </label>
+
                     <label>Заметки:
-                        <textarea id="stu-notes" rows="4"></textarea>
+                        <textarea id="stu-notes" name="stu-notes" rows="4"></textarea>
                     </label>
+
                     <div class="form-buttons">
                         <button type="submit" id="save-btn">Сохранить</button>
                         <a href="index.html" class="btn-link btn-cancal">Отмена</a>
@@ -43,8 +53,8 @@
                 </form>
             </section>
         </main>
-        <script src="js/storage.js"></script>
+        <!--<script src="js/storage.js"></script>
         <script src="js/validation.js"></script>
-        <script src="js/form-logic.js"></script> 
+        <script src="js/form-logic.js"></script> -->
     </body>
 </html>
