@@ -16,9 +16,6 @@ butt.addEventListener("click", () => {
 const students = JSON.parse(localStorage.getItem("students"))
 
 //! viewStudent
-
-const table = document.querySelector("tbody");
-
 function renderTable(table = document.querySelector("tbody"), students = JSON.parse(localStorage.getItem("students"))) {
     table.innerHTML = "";
     for(let i = 0; i < students.length; i++) {
@@ -40,6 +37,7 @@ renderTable();
 
 //! button's work
 
+const table = document.querySelector("tbody");
 table.addEventListener("click", (event) => {
     if(event.target.textContent === "Удалить") {
         CRUDelete(event.target.dataset.fdid)
