@@ -1,6 +1,6 @@
 import { CreateRUD } from "./CRUD.js";
 
-function createStudent(fullName, group, ISU, dormNumber, dateArrived, isForeign, notes) {
+function createStudent(fullName, group, ISU, dormNumber, stuRoom, dateArrived, isForeign, notes) {
     //! error
     let errorName = "";
 
@@ -13,6 +13,10 @@ function createStudent(fullName, group, ISU, dormNumber, dateArrived, isForeign,
         errorName += "group ";
     }
 
+    if(ISU.length !== 6 || Number.isNaN(Number(ISU))) {
+        errorName += "ISU "
+    }
+
     if(errorName.length > 0) {
         throw new Error(errorName + "error");
     }
@@ -22,6 +26,7 @@ function createStudent(fullName, group, ISU, dormNumber, dateArrived, isForeign,
     }
     if(dateArrived.toString().trim() === "" || dormNumber === null) {
         dateArrived = null;
+        stuRoom = null;
     }
 
     //!finally
@@ -31,6 +36,7 @@ function createStudent(fullName, group, ISU, dormNumber, dateArrived, isForeign,
         "group" : group,
         "ISU" : ISU,
         "dormNumber" : dormNumber,
+        "room" : stuRoom,
         "dateArrived" : dateArrived,
         "isForeign" : isForeign,
         "notes" : notes,
@@ -65,6 +71,7 @@ sendButton.addEventListener("submit", (event) => {
             formData.get("stu-group"),
             formData.get("stu-isu"),
             formData.get("stu-hostel"),
+            formData.get("stu-room"),
             formData.get("stu-date"),
             formData.has("stu-foreign"),
             formData.get("stu-notes")

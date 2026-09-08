@@ -21,12 +21,12 @@ function renderTable(table = document.querySelector("tbody"), students = JSON.pa
     for(let i = 0; i < students.length; i++) {
         //todo Придумать оптимизацию id for update
         const template = `
-    <tr>
-        <td>${students[i].fullName}</td>
+    <tr data-id="${students[i].ID}">
+        <td><a href="../html/info.html?id=${students[i].ID}">${students[i].fullName}</a></td>
         <td>${students[i].group}</td>
         <td>${students[i].ISU}</td>
         <td>
-            <button data-fdid="${students[i].ID}">Удалить</button>
+            <button>Удалить</button>
         </td>
     </tr>`
         table.innerHTML += template;
@@ -40,12 +40,11 @@ renderTable();
 const table = document.querySelector("tbody");
 table.addEventListener("click", (event) => {
     if(event.target.textContent === "Удалить") {
-        CRUDelete(event.target.dataset.fdid)
+        CRUDelete(event.target.closest("tr").dataset.id)
     }
     //todo Make about update
     renderTable();
 })
-
 
 
 
