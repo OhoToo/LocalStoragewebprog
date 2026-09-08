@@ -1,0 +1,215 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #333;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+main {
+    width: 100%;
+    max-width: 1000px;
+    position: relative;
+}
+
+.hidden {
+    display: none !important;
+}
+
+button, .btn-link {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+button:hover, .btn-link:hover {
+    background-color: #0056b3;
+}
+
+.btn-cancel {
+    background-color: #6c757d;
+}
+
+.btn-cancel:hover {
+    background-color: #545b62;
+}
+
+.btn-edit {
+    background-color: #ffc107;
+    color: #212519;
+    margin-right: 5px;
+    margin-bottom: 0;
+}
+
+.btn-edit:hover {
+    background-color: #e0a800;
+}
+
+.btn-delete {
+    background-color: #dc3545;
+    margin-right: 0;
+    margin-bottom: 0;
+}
+
+.btn-delete:hover {
+    background-color: #bd2130;
+}
+
+teble {
+    width:100%;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6;
+}
+
+th {
+    background-color: #e9ecef;
+    font-weight: bold;
+}
+
+tbody tr:hover {
+    background-color: #f1f3f5;
+}
+
+.student-name-trigger {
+    color: #007bff;
+    cursor: help;
+    text-decoration: underline dotted;
+}
+
+form {
+    background-color: white;
+    padding: 25px;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+form label {
+    display: block;
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="date"],
+form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+form input[type="checkbox"] {
+    margin-right: 5px;
+    width: auto;
+}
+
+.form-button {
+    display: flexbox;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.form-buttons button, .form-button .btn-link {
+    margin-bottom: 0;
+}
+
+.modal-tooltip {
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    z-index: 1000;
+    max-width: 300px;
+    pointer-events: none;
+}
+
+.modal-tooltip h3 {
+    margin-bottom: 10px;
+    font-size: 16px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+    color: #007bff;
+}
+
+.medal-tooltip p {
+    font-size: 13px;
+    margin-bottom: 5px;
+    line-height: 1.4;
+}
+
+@media (max-widht: 600px) {
+    table,thead,tbody,th,td,tr{
+        display: block;
+    }
+    thead tr{
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    tr {
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+        border-radius: 4px;
+        background: white;
+    }
+    td {
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+    }
+    td:before {
+        position: absolute;
+        top: 12px;
+        left: 15px;
+        width: 45%;
+        white-space: nowrap;
+        font-weight: bold;
+    }
+    td:nth-of-type(1):before {content: "ФИО:";}
+    td:nth-of-type(2):before {content: "Группа:";}
+    td:nth-of-type(3):before {content: "ИСУ ID:";}
+    td:nth-of-type(4):before {content: "Действия:";}
+}
+
+.input-error-border {
+    border-color: #dc3545 !important;
+}
