@@ -19,13 +19,13 @@ const students = JSON.parse(localStorage.getItem("students"))
 function renderTable(table = document.querySelector("tbody"), students = JSON.parse(localStorage.getItem("students"))) {
     table.innerHTML = "";
     for(let i = 0; i < students.length; i++) {
-        //todo Придумать оптимизацию id for update
         const template = `
     <tr data-id="${students[i].ID}">
         <td><a href="../html/info.html?id=${students[i].ID}">${students[i].fullName}</a></td>
         <td>${students[i].group}</td>
         <td>${students[i].ISU}</td>
         <td>
+            <button>Изменить</button>
             <button>Удалить</button>
         </td>
     </tr>`
@@ -43,6 +43,9 @@ table.addEventListener("click", (event) => {
         CRUDelete(event.target.closest("tr").dataset.id)
     }
     //todo Make about update
+    if(event.target.textContent === "Изменить") {
+        location.href = `../html/form.html?id=${event.target.closest("tr").dataset.id}`;
+    }
     renderTable();
 })
 
