@@ -1,4 +1,4 @@
-function getBack() {
+function getBack(students) {
     localStorage.setItem("students", JSON.stringify(students));
 }
 
@@ -7,7 +7,7 @@ function CreateRUD(student) {
 
     students.unshift(student);
 
-    getBack();
+    getBack(students);
 }
 
 
@@ -19,7 +19,7 @@ function CRUDelete(studentID) {
 
     students.splice(students.findIndex((student) => student.ID === studentID),1);
 
-    getBack();
+    getBack(students);
 }
 
 
@@ -32,4 +32,4 @@ function CRUDelete(studentID) {
 
 //! export
 
-export { CreateRUD, getBack }
+export { CreateRUD, CRUDelete, getBack }
