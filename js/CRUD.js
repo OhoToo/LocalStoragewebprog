@@ -6,8 +6,10 @@ function getBack(students) {
 function checkErrorStudent(student) {
     //! error
     let errorName = "";
+    
+    const names = student.fullName.trim().split(/\s+/);
 
-    if(student.fullName.trim() === "" || student.fullName.length < 4) {
+    if(student.fullName.trim() === "" || names.some((word) => word.length < 3) || names.length < 2) {
         errorName += "fullname ";
     }
 
@@ -29,13 +31,11 @@ function checkErrorStudent(student) {
     }
     if(student.dateArrived.toString().trim() === "" || student.dormNumber === null) {
         student.dateArrived = null;
-        student.stuRoom = null;
+        student.room = null;
     }
 }
 
 function createStudent(fullName, group, ISU, dormNumber, stuRoom, dateArrived, isForeign, notes) {
-    //!finally
-
     const student = {
         "fullName" : fullName,
         "group" : group,
@@ -49,6 +49,12 @@ function createStudent(fullName, group, ISU, dormNumber, stuRoom, dateArrived, i
 
     //!errors
     checkErrorStudent(student)
+
+    let names = student.fullName.trim().split(/\s+/);
+    for(let i = 0; i < names.length; i++) {
+        names[i] = names[i][0].toUpperCase() + names[i].slice(1).toLowerCase();
+    }
+    student.fullName = names.join(" ")
 
     student.ID = crypto.randomUUID();
 

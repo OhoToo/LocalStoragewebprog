@@ -16,6 +16,8 @@ infoBody.innerHTML = `
 
 <p><strong>Общежитие:</strong> ${student.dormNumber || "-"}</p>
 
+<p><strong>Комната:</strong> ${student.room || "-"}</p>
+
 <p><strong>Дата заселения:</strong> ${student.dateArrived || "-"}</p>
 
 <p><strong>Иностранец:</strong> ${student.isForeign ? "Да" : "Нет"}</p>
