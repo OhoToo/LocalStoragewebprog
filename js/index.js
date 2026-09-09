@@ -25,8 +25,8 @@ function renderTable(table = document.querySelector("tbody"), students = JSON.pa
         <td>${students[i].group}</td>
         <td>${students[i].ISU}</td>
         <td>
-            <button>Изменить</button>
-            <button>Удалить</button>
+            <button class="btn-edit">Изменить</button>
+            <button class="btn-delete">Удалить</button>
         </td>
     </tr>`
         table.innerHTML += template;
