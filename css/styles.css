@@ -313,6 +313,12 @@ form input[type="checkbox"] {
     }
 }
 
+.checkbox-label {
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
 #student-info {
     width: 100%;
     max-width: 500px;
