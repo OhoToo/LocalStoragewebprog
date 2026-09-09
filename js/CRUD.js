@@ -18,8 +18,8 @@ function checkErrorStudent(student) {
         errorName += "group ";
     }
 
-    if(student.ISU.length !== 6 || Number.isNaN(Number(student.ISU))) {
-        errorName += "ISU "
+    if (!/^[0-9]{6}$/.test(student.ISU)) {
+        errorName += "ISU ";
     }
 
     if(errorName.length > 0) {
