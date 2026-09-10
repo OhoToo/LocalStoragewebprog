@@ -22,8 +22,12 @@ infoBody.innerHTML = `
 
 <p><strong>Иностранец:</strong> ${student.isForeign ? "Да" : "Нет"}</p>
 
-<p><strong>Заметки:</strong> ${student.notes || "-"}</p>
+<p><strong>Заметки:</strong> <span id="student-notes"></span></p>
 
-<p><strong>ID:</strong> ${student.ID}</p>
+<p><strong>ID:</strong> <span id="student-id"></span></p>
 `
 
+
+document.querySelector("#student-notes").textContent = student.notes || "-"
+
+document.querySelector("#student-id").textContent = studentID;
