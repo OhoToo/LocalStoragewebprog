@@ -32,7 +32,7 @@ function checkErrorStudent(student, students = JSON.parse(localStorage.getItem("
     if (String(student.dateArrived ?? "").trim() === "" || student.dormNumber === null) {
         student.dateArrived = null;
         student.room = null;
-}
+    }
 }
 
 function createStudent(fullName, group, ISU, dormNumber, stuRoom, dateArrived, isForeign, notes, id=null) {
