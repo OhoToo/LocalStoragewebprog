@@ -96,10 +96,9 @@ else {
                 formData.get("stu-room"),
                 formData.get("stu-date"),
                 formData.has("stu-foreign"),
-                formData.get("stu-notes")
+                formData.get("stu-notes"),
+                student.ID
             );
-            checkErrorStudent(updatedStudent)
-            updatedStudent.ID = student.ID;
 
             students[studentNum] = updatedStudent;
             getBack(students)

@@ -3,7 +3,7 @@ function getBack(students) {
 }
 
 
-function checkErrorStudent(student) {
+function checkErrorStudent(student, students = JSON.parse(localStorage.getItem("students"))) {
     //! error
     let errorName = "";
     
@@ -18,7 +18,7 @@ function checkErrorStudent(student) {
         errorName += "group ";
     }
 
-    if (!/^[0-9]{6}$/.test(student.ISU)) {
+    if (!/^[0-9]{6}$/.test(student.ISU) || students.some((readyStudent) => readyStudent.ISU === student.ISU && readyStudent.ID !== student.ID)) {
         errorName += "ISU ";
     }
 
@@ -35,7 +35,7 @@ function checkErrorStudent(student) {
 }
 }
 
-function createStudent(fullName, group, ISU, dormNumber, stuRoom, dateArrived, isForeign, notes) {
+function createStudent(fullName, group, ISU, dormNumber, stuRoom, dateArrived, isForeign, notes, id=null) {
     const student = {
         "fullName" : fullName,
         "group" : group,
@@ -46,9 +46,9 @@ function createStudent(fullName, group, ISU, dormNumber, stuRoom, dateArrived, i
         "isForeign" : isForeign,
         "notes" : notes,
     }
-
+    student.ID = id ?? crypto.randomUUID();
     //!errors
-    checkErrorStudent(student)
+    checkErrorStudent(student);
 
     let names = student.fullName.trim().split(/\s+/);
     for(let i = 0; i < names.length; i++) {
@@ -57,7 +57,7 @@ function createStudent(fullName, group, ISU, dormNumber, stuRoom, dateArrived, i
     student.group = student.group[0].toUpperCase() + student.group.slice(1);
     student.fullName = names.join(" ")
 
-    student.ID = crypto.randomUUID();
+    
 
     return student;
 }
